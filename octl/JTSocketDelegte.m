@@ -3,7 +3,7 @@
 //  octl
 //
 //  Created by Jan-Gerd Tenberge on 03.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Jan-Gerd Tenberge. All rights reserved.
 //
 
 #import "JTSocketDelegte.h"
@@ -15,7 +15,7 @@
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    printf("Resonse: %s\n", [JTOnkyoHelper commandForData:data].UTF8String);
+    printf("Response: %s\n", [JTOnkyoHelper commandForData:data].UTF8String);
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {

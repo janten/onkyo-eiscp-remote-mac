@@ -3,7 +3,7 @@
 //  octl
 //
 //  Created by Jan-Gerd Tenberge on 03.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Jan-Gerd Tenberge. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,9 +16,7 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         JTSocketDelegte *delegate = [[JTSocketDelegte alloc] init];
         GCDAsyncSocket *asyncSocket;
-        NSError *error = nil;
-        
-        NSInteger port = 60128;
+        NSUInteger port = 60128;
         NSString *address;
         NSString *userCommand;
         
@@ -35,15 +33,17 @@ int main(int argc, const char * argv[])
                 return 1;
                 break;
         }
+
+        NSError *error = nil;
         asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:delegate delegateQueue:dispatch_queue_create(0, 0)];
         BOOL connected = [asyncSocket connectToHost:address onPort:port withTimeout:0.05 error:&error];
         
         if (error != nil) {
-            NSLog(@"Error: %@", error);
+            printf("Error: %s", error.description.UTF8String);
             return error.code;
         }
         if (!connected) {
-            NSLog(@"Could not connect");
+            printf("Error: Could not connect to receiver");
             return 1;
         }
         
