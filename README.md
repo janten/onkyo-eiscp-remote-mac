@@ -24,7 +24,15 @@ and to switch it off use
 Some commands will also receive information from the receiver. To get the current power status, use
 
     octl PWRQSTN ipAddress [port]
+
+and you should get a response like this
+
+	Connected to 192.168.2.239 at port 60128
+	Command sent
+	Resonse: !1PWR01
     
+where `!1PWR01` indicates that the receiver is switched on.
+
 Commands
 --------
 A list of available commands and supported receivers is available on http://www.wyerd.co.uk/images/onkyo_cmds.xls
