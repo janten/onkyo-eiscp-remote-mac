@@ -4229,7 +4229,7 @@ static void allocate_ring_buffer(uint8_t **ringBufferPtr, size_t ringBufferSize)
 		return;
 	}
 	
-	BOOL hasBytesAvailable;
+	BOOL hasBytesAvailable = NO;
 	unsigned long estimatedBytesAvailable;
 	
 	if ([self usingCFStreamForTLS])

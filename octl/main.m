@@ -11,8 +11,7 @@
 #import "JTOnkyoHelper.h"
 #import "GCDAsyncSocket.h"
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
     @autoreleasepool {
         JTSocketDelegte *delegate = [[JTSocketDelegte alloc] init];
         GCDAsyncSocket *asyncSocket;
@@ -40,7 +39,7 @@ int main(int argc, const char * argv[])
         
         if (error != nil) {
             printf("Error: %s", error.description.UTF8String);
-            return error.code;
+            return (int)error.code;
         }
         if (!connected) {
             printf("Error: Could not connect to receiver");
