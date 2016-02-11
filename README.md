@@ -36,4 +36,4 @@ where `!1PWR01` indicates that the receiver is switched on.
 
 Commands
 --------
-A list of available commands and supported receivers is available on http://www.wyerd.co.uk/images/onkyo_cmds.xls
+A list of available commands and supported receivers is available in <a href="commands.xls">commands.xls</a>.
